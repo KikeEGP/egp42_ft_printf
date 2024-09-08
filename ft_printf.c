@@ -6,13 +6,21 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/08 16:04:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:30:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-int ft_printf(char const *, ...)/*Check if char const * need a var name*/
+int ft_printf(char const *str, ...)/*Check if char const * need a var name*/
+{
+		size_t	index;
+		int		result;
+
+		result = 0;
+		index = 0;
+		while (str[index] != '\0')
+}
 /*
 Okay, what do we have here?
 
