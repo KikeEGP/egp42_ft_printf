@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/08 20:30:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/08 20:57:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,9 @@ int ft_printf(char const *str, ...)/*Check if char const * need a var name*/
 		size_t	index;
 		int		result;
 
-		result = 0;
+		result = -1;
+		if (str == NULL)
+				return (result);
 		index = 0;
 		while (str[index] != '\0')
 }
