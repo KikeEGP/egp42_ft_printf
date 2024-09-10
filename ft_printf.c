@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/08 21:36:47 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/10 13:46:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,18 +20,22 @@ int	ft_printf(char const *str, ...)/*Check if char const * need a var name*/
 	if (str == NULL)
 		return (-1);
 	result = 0;
-	while (str[result] != '\0')
+	if (ft_strchr(str, '%'))
 	{
-		if (str[result] == %)/*va_* macros's time*/
-		{	/*go to next char, see what is the argument*/
-			/*Be sure that exist an argument above*/
-			/*write argument and be sure we count chars written there*/
-			/*result + num_written*/
+		while (str[result] != '\0')
+		{
+			/*DO I NEED THIS if () BELOW?*/
+			if (str[result] == %)/*va_* macros's time*/
+			{	/*go to next char, see what is the argument*/
+				/*Be sure that exist an argument above*/
+				/*write argument and be sure we count chars written there*/
+				/*result + num_written*/
+				result++;
+			}
 		}
-		else
-			putchar/**/;
-		result++;
 	}
+	else
+		putstr/*or*/putchar/**/;/*OKAY, BUT YOU MUST COUNT CHARS WRITTEN*/
 	return (result);
 }
 /*
