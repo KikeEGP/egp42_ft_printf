@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/10 13:46:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/11 21:16:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 int	ft_printf(char const *str, ...)/*Check if char const * need a var name*/
 {
 	int		result;
+	int		num_specifiers;/*MAYBE NEED TO DELETE*/
+	int		check;
+	va_list	parameter;
 
 	result = 0;
 	if (str == NULL)
@@ -22,17 +25,11 @@ int	ft_printf(char const *str, ...)/*Check if char const * need a var name*/
 	result = 0;
 	if (ft_strchr(str, '%'))
 	{
-		while (str[result] != '\0')
-		{
-			/*DO I NEED THIS if () BELOW?*/
-			if (str[result] == %)/*va_* macros's time*/
-			{	/*go to next char, see what is the argument*/
-				/*Be sure that exist an argument above*/
-				/*write argument and be sure we count chars written there*/
-				/*result + num_written*/
-				result++;
-			}
-		}
+		check = check_specifier(str);
+		if (check != 1)
+			/*function with va_list*/
+		else
+			/*function that writes %*/
 	}
 	else
 		putstr/*or*/putchar/**/;/*OKAY, BUT YOU MUST COUNT CHARS WRITTEN*/
