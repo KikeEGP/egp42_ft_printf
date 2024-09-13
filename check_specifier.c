@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 14:08:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/11 21:41:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/13 17:06:28 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,23 @@ int	check_specifier(char const *str)
 	return (check);
 }
 
-char	*write_percent(char const	*str)
+int	*write_percent(char const	*str)
 {
+	int		result;
 	int		i;
 
 	i = 0;
-	while(str[i] != '\0')
+	result = 0;
+	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
+		{
 			i++;
-		else
-			write(1, &str[i], 1);
+			result--;
+		}
+		write(1, &str[i], 1);
 		i++;
+		result++;
 	}
-/*CORRECT THIS AND RETURN, IS INT AND COUNT OF WRITTEN!*/
+	return (result);
+}
