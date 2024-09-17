@@ -6,33 +6,61 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/11 21:16:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/17 21:08:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_printf.h>
+#include "ft_printf.h"
+
+static int	write_with_arguments(char const *str, va_list  parameter)
+{
+	int	i;
+	int	result;
+
+	i = 0;
+	result = 0;
+	while (str[i] != '\0')
+	{
+		if (str[i] != '%')
+		{
+			write(1, &str[i], 1);
+			i++;
+			result++;
+		}
+		else
+		{
+			i++;
+			result += check_argument_and_write(str[i], parameter);
+		}
+
+	}
+}
 
 int	ft_printf(char const *str, ...)/*Check if char const * need a var name*/
 {
 	int		result;
-	int		num_specifiers;/*MAYBE NEED TO DELETE*/
 	int		check;
 	va_list	parameter;
 
-	result = 0;
 	if (str == NULL)
 		return (-1);
 	result = 0;
-	if (ft_strchr(str, '%'))
+	check = check_if_specifier(str);
+	//va_start(parameter, str);
+	if (check > 1)
 	{
-		check = check_specifier(str);
-		if (check != 1)
-			/*function with va_list*/
-		else
-			/*function that writes %*/
+			/*function with va_list. This will check if it's properly used %*/
+			/*TEST IT COMPARING ORIGINAL, BEFORE YOU DO MORE
+			CHECK IF PRINTF(STR, ARG1) WITH NO % COMPILES,
+			AND SAME WITH YOURS*/
+		result += write_with_arguments(str, parameter);
+		va_end(parameter);
 	}
 	else
-		putstr/*or*/putchar/**/;/*OKAY, BUT YOU MUST COUNT CHARS WRITTEN*/
+	{
+		result += write_percent_or_zero_arg(str);
+	//	va_end(parameter);
+	}
 	return (result);
 }
 /*

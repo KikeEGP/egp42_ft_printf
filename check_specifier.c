@@ -6,16 +6,18 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 14:08:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/13 17:06:28 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/17 19:33:10 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "ft_printf.h"
 
 /*Be careful to move to main function or at least to include header*/
 /*
 Purpose of this function: check if ther's an error, 
 expect one argument or more, and if (just one argument && it's a %%)*/
 /*We use this function after check with strchr that there's a char % at least*/
-int	check_specifier(char const *str)
+int	check_if_specifier(char const *str)
 {
 	char	*first_specifier;
 	char	*last_specifier;
@@ -23,11 +25,12 @@ int	check_specifier(char const *str)
 
 	first_specifier = ft_strchr(str, '%');
 	last_specifier = ft_strrchr(str, '%');
+	/*if (first_specifier) check that you don't need this condition*/
 	check = ft_strlen(first_specifier) - ft_strlen(last_specifier);
 	return (check);
 }
 
-int	*write_percent(char const	*str)
+int	write_percent_or_zero_arg(char const *str)
 {
 	int		result;
 	int		i;
