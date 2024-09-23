@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/23 21:41:54 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/23 21:47:47 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	print_char()
 int	print_string()
 {
 	int	result;
-	char	*null_argument;
 
-	null_argument = "(null)";
 	result = 0;
 	if (s_argument)
 	{
@@ -34,7 +32,6 @@ int	print_string()
 			result += write(1, &s_argument[result], 1);
 	}
 	else
-		while (null_argument[result] != '\0')
-			result += write(1, &null_argument[result], 1);
+		result += write(1, "(null)", 6);
 	return (result);
 }
