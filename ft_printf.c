@@ -6,12 +6,27 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/17 21:08:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/09/21 15:33:55 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+static int	check_argument_and_write(const char *specifier, va_list parameter)
+{
+	if (specifier == 'c' || specifier == '%')
+		return (print_char());
+	else if (specifier == 's')
+		return (print_string());
+	else if (specifier == 'p')
+		return (print_pointer());
+	else if (specifier == 'd' || specifier == 'i')
+		return (print_integer());
+	else if (specifier == 'u')
+		return (print_unsigned_decimal());
+	else if (specifier == 'x' || specifier == 'X')
+		return (print_hexadecimal());
+}
 static int	write_with_arguments(char const *str, va_list  parameter)
 {
 	int	i;
@@ -31,6 +46,7 @@ static int	write_with_arguments(char const *str, va_list  parameter)
 		{
 			i++;
 			result += check_argument_and_write(str[i], parameter);
+			i++;
 		}
 
 	}
