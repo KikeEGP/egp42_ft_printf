@@ -29,7 +29,7 @@ int	print_string()
 	if (s_argument)
 	{
 		while (s_argument[result] != '\0')
-			result += write(1, &s_argument[result], 1);
+			result += write(1, &s_argument[result], 1)
 	}
 	else
 		result += write(1, "(null)", 6);
