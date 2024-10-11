@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/11 22:12:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/11 22:19:32 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static int	check_argument_and_write(const char *specifier, va_list parameter)
 {
+	/*CHECK PROPERLY IF FUNCTIONS HERE ARE CORRECT*/
 	if (specifier == 'c' || specifier == '%')
 		return (print_char());
 	else if (specifier == 's')
