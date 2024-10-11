@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/11 21:43:09 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/11 22:12:35 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static int	check_argument_and_write(const char *specifier, va_list parameter)
 	else if (specifier == 'u')
 		return (print_unsigned_decimal());
 	else if (specifier == 'x' || specifier == 'X')
+		/*Look how to establish LOWER or UPPER BASE in case of x or X*/
 		return (print_hexadecimal());
 }
 static int	write_with_arguments(char const *str, va_list  parameter)
