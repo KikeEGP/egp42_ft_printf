@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/21 15:33:55 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/11 21:43:09 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ static int	write_with_arguments(char const *str, va_list  parameter)
 	{
 		if (str[i] != '%')
 		{
-			write(1, &str[i], 1);
+			result += print_char(str[i]);
 			i++;
-			result++;
 		}
 		else
 		{
