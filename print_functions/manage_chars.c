@@ -6,13 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/23 21:56:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/11 21:26:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-int	print_char()
+int	print_char(int c_argument)
 {
 	int	result;
 
@@ -21,7 +21,7 @@ int	print_char()
 	return (result);
 }
 
-int	print_string()
+int	print_string(char *s_argument)
 {
 	int	result;
 
@@ -29,7 +29,7 @@ int	print_string()
 	if (s_argument)
 	{
 		while (s_argument[result] != '\0')
-			result += write(1, &s_argument[result], 1);
+			result += print_char(s_argument[result]);
 	}
 	else
 		result += write(1, "(null)", 6);
