@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/11 22:21:31 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/12 23:56:53 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Function to write digit, for d, i and u*/
 /*11-10-24	use it for x, X and p too, adding base as a parameter*/
-int	putnbr_base(int num, int base)
+int	putnbr_base(long long num, char *base_chars, int base)
 {
 	int	result;
 	unsigned int	unsign;
@@ -29,7 +29,7 @@ int	putnbr_base(int num, int base)
 		unsign = num;
 	if (unsign >= base)
 		result += putnbr_base((unsign / base), base);
-	result += print_char(LOWER_HEXA_BASE[unsign % base]);
+	result += print_char(base_chars[unsign % base]);
 	/*HOW CAN I SWITCH TO UPPER ONLY IN CASE OF %X, only uppercase specifier*/
 	return (result);
 }
