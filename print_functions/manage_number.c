@@ -31,16 +31,15 @@ int	putnbr_base(long long num, char *base_chars, int base)
 		result += putnbr_base((unsign / base), base);
 	result += print_char(base_chars[unsign % base]);
 	/*HOW CAN I SWITCH TO UPPER ONLY IN CASE OF %X, only uppercase specifier*/
-	return (result);
-}
-
-int	print_integer()/*For d and i*/
-{
-	/*Function call to putnbr()*/
 }
 
 int	print_unsigned_decimal()/*For u*/
 {
-	/*Need to cast int to unsgined? Or var does itself?*/
-	/*Here, insert putnbr*/
+	intresult;/*tab*/
+	unsigned intunsign;/*tab*/
+
+	result = 0;
+	unsign = parameter;
+	result += putnbr_base(unsign, LOWER_HEXA_BASE, 10);
+	return (result);
 }
