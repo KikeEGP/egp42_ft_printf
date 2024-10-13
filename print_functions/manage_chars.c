@@ -19,6 +19,7 @@ int	print_char(int c_argument)
 	result = 1;
 	write(1, &c_argument, result);
 	return (result);
+	/*Check if this is correct. When error, writes -1?*/
 }
 
 int	print_string(char *s_argument)
