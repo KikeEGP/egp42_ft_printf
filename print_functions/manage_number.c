@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/21 13:15:03 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 14:24:33 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,25 +28,33 @@ int	putnbr_base(long long num, char *base_chars, int base)
 	else
 		unsign = num;
 	if (unsign >= base)
-		result += putnbr_base((unsign / base), base);
+		result += putnbr_base((unsign / base), base_chars, base);
 	result += print_char(base_chars[unsign % base]);
 	return (result);
 }
 
-int	print_unsigned_decimal()/*For u*/
+int	print_unsigned_decimal(int u_argument)/*For u*/
 {
-	unsigned intunsign;/*tab*/
+	unsigned int	unsign;
 
-	unsign = parameter;
+	unsign = u_argument;
 	return (putnbr_base(unsign, LOWER_HEXA_BASE, 10));
 }
 
-int	print_pointer(void *ptr)
+int	print_pointer(void *p_argument)
 {
 	unsigned int	address;
-	
+	int	result;
+
 	if (ptr == NULL)
-		return (print_string("(nil)");
-	address = (unsigned int)ptr;
-	return (putnbr_base(address, LOWER_HEXA_BASE, 16));
+		return (print_string("(nil)"));
+	result = 0;
+	address = (unsigned int)p_argument;
+	result += print_string("0x");
+	result += putnbr_base(address, LOWER_HEXA_BASE, 16);
+	return (result);
+}
+
+int	print_hexadecimal()
+{
 }
