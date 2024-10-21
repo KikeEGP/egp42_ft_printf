@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/21 14:24:33 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:20:29 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	putnbr_base(long long num, char *base_chars, int base)
 	}
 	else
 		unsign = num;
-	if (unsign >= base)
+	if (unsign >= base)/**/
 		result += putnbr_base((unsign / base), base_chars, base);
 	result += print_char(base_chars[unsign % base]);
 	return (result);
@@ -55,6 +55,10 @@ int	print_pointer(void *p_argument)
 	return (result);
 }
 
-int	print_hexadecimal()
+int	print_hexadecimal(int hexa_argument, int specifier)
 {
+	if (specifier == 'x')
+		return (putnbr_base(hexa_argument, LOWER_HEXA_BASE, 16));
+	else if (specifier == 'X')
+		return (putnbr_base(hexa_argument, UPPER_HEXA_BASE, 16));
 }
