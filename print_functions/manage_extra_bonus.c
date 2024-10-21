@@ -33,7 +33,7 @@ int	print_plus_decimal_bonus(int dec_argument)
 	return (result);
 }
 
-int	print_hexadecimal_bonus(int hexa_argument, int specifier)
+int	print_hash_hexadecimal_bonus(int hexa_argument, int specifier)
 {
 	int		result;
 
