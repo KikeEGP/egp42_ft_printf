@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/11 21:26:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 15:06:05 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,12 @@
 
 int	print_char(int c_argument)
 {
-	int	result;
+	int		result;
+	unsigned char	letter;
 
+	letter = (unsigned char)c_argument;
 	result = 1;
-	write(1, &c_argument, result);
+	write(1, &letter, result);
 	return (result);
 	/*Check if this is correct. When error, writes -1?*/
 }
