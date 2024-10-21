@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/12 23:56:53 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/21 13:15:03 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,15 @@ int	print_unsigned_decimal()/*For u*/
 	unsigned intunsign;/*tab*/
 
 	unsign = parameter;
-	return(putnbr_base(unsign, LOWER_HEXA_BASE, 10));
+	return (putnbr_base(unsign, LOWER_HEXA_BASE, 10));
+}
+
+int	print_pointer(void *ptr)
+{
+	unsigned int	address;
+	
+	if (ptr == NULL)
+		return (print_string("(nil)");
+	address = (unsigned int)ptr;
+	return (putnbr_base(address, LOWER_HEXA_BASE, 16));
 }
