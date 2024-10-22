@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:46:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/22 20:14:07 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:23:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ int	print_space_decimal_bonus(int dec_argument)
 	int		result; /*PUT A CORRECT INCLUDE*/
 
 	result = 0;
-	result += print_char(32);
+	if (dec_argument >= 0)
+		result += print_char(32);
 	result += putnbr_base(dec_argument, LOWER_HEXA_BASE, 10);
 	return (result);
 }
