@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:46:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/22 20:09:17 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:14:07 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,15 +43,15 @@ int	print_hash_hexadecimal_bonus(int hexa_argument, int specifier)
 		if (specifier == 'x')
 		{
 			result += print_string("0x");
-			result += putnbr(hexa_argument, LOWER_HEXA_BASE, 16);
+			result += putnbr_base(hexa_argument, LOWER_HEXA_BASE, 16);
 		}
 		else if (specifier == 'X')
 		{
 			result += print_string("0X");
-			result += putnbr(hexa_argument, UPPER_HEXA_BASE, 16);
+			result += putnbr_base(hexa_argument, UPPER_HEXA_BASE, 16);
 		}
 	}
 	else
-		result += putnbr(hexa_argument, LOWER_HEXA_BASE, 16);
+		result += print_char('0');
 	return (result);
 }
