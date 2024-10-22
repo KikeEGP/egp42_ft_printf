@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 14:46:06 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/22 20:23:59 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/22 20:31:59 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	print_plus_decimal_bonus(int dec_argument)
 	int		result;
 
 	result = 0;
-	if (dec_argument > 0)
+	if (dec_argument >= 0)
 		result += print_char('+');
 	result += putnbr_base(dec_argument, LOWER_HEXA_BASE, 10);
 	return (result);
