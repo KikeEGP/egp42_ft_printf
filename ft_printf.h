@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 15:03:38 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/09/17 19:27:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:55:01 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,12 @@
 # define UPPER_HEXA_BASE "0123456789ABCDEF"
 # define LOWER_HEXA_BASE "0123456789abcdef"
 
-int	ft_printf(char const *str, ...);
-int check_if_specifier(char const *str);
-int	write_percent_or_zero_arg(char const *str);
-
+int	ft_printf(char const *format, ...);
+/*											manage_chars					*/
+int	print_char(int c_argument);
+int	print_string(const char *s_argument);
+/*											manage_numbers					*/
+int	print_hexadecimal(unsigned int hexa_argument, int specifier);
+int	print_pointer(void *p_argument);
+int	putnbr_base(long long num, char *base_chars, int base);
 #endif
