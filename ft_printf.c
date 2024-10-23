@@ -6,11 +6,15 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:39:30 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:48:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+/*static int	check_loop_for_percent()
+{
+}*/
 
 static int	check_argument_and_write(const char *specifier, va_list ap)
 {/*Check if specifier must be const char * or just char*/
