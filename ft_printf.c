@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:05:31 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:13:15 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,27 +29,27 @@ static int	check_argument_and_write(const char *specifier, va_list parameter)
 		/*Look how to establish LOWER or UPPER BASE in case of x or X*/
 		return (print_hexadecimal());
 }
-static int	write_with_arguments(char const *str, va_list  parameter)
+
+static int	print_format(char const *format, va_list  parameter)
 {
 	int	i;
 	int	result;
 
 	i = 0;
 	result = 0;
-	while (str[i] != '\0')
+	while (format[i] != '\0')
 	{
-		if (str[i] != '%')
+		if (format[i] != '%')
 		{
-			result += print_char(str[i]);
+			result += print_char(format[i]);
 			i++;
 		}
 		else
 		{
 			i++;
-			result += check_argument_and_write(str[i], parameter);
+			result += check_argument_and_write(format[i], parameter);
 			i++;
 		}
-
 	}
 }
 
@@ -58,11 +58,11 @@ int	ft_printf(char const *format, ...)
 	int		result;
 	va_list	parameter;
 
-	if (str == NULL)
+	if (format == NULL)
 		return (-1);
 	result = 0;
 	va_start(parameter, format);
-	result += write_with_arguments(format, parameter);
+	result += print_format(format, parameter);
 	va_end(parameter);
 	return (result);
 }
