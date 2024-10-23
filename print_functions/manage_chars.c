@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/21 15:06:05 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:18:50 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	print_char(int c_argument)
 	/*Check if this is correct. When error, writes -1?*/
 }
 
-int	print_string(char *s_argument)
+int	print_string(const char *s_argument)
 {
 	int	result;
 
