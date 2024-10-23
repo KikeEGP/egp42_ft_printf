@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:28:25 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/23 14:52:57 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	putnbr_base(long long num, char *base_chars, int base)
 	}
 	else
 		unsign = num;
-	if (unsign >= base)/**/
+	if (unsign >= base)
 		result += putnbr_base((unsign / base), base_chars, base);
 	result += print_char(base_chars[unsign % base]);
 	return (result);
