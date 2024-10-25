@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 15:03:38 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:55:01 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:49:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	ft_printf(char const *format, ...);
 int	print_char(int c_argument);
 int	print_string(const char *s_argument);
 /*											manage_numbers					*/
-int	print_hexadecimal(unsigned int hexa_argument, int specifier);
+int	print_hexadecimal(unsigned int hexa_argument, char specifier);
 int	print_pointer(void *p_argument);
-int	putnbr_base(long long num, char *base_chars, int base);
+int	putnbr_base(long long num, char *base_chars, unsigned int base);
 #endif

@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:52:57 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:50:14 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*Function to write digit, for d, i and u*/
 /*11-10-24	use it for x, X and p too, adding base as a parameter*/
-int	putnbr_base(long long num, char *base_chars, int base)
+int	putnbr_base(long long num, char *base_chars, unsigned int base)
 {
 	int	result;
 	unsigned int	unsign;
@@ -35,19 +35,17 @@ int	putnbr_base(long long num, char *base_chars, int base)
 
 int	print_pointer(void *p_argument)
 {
-	unsigned int	address;
 	int	result;
 
 	if (ptr == NULL)
 		return (print_string("(nil)"));
 	result = 0;
-	address = (unsigned int)p_argument;
 	result += print_string("0x");
-	result += putnbr_base(address, LOWER_HEXA_BASE, 16);
+	result += putnbr_base(&p_argument, LOWER_HEXA_BASE, 16);
 	return (result);
 }
 
-int	print_hexadecimal(unsigned int hexa_argument, int specifier)
+int	print_hexadecimal(unsigned int hexa_argument, char specifier)
 {
 	if (specifier == 'x')
 		return (putnbr_base(hexa_argument, LOWER_HEXA_BASE, 16));

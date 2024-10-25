@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:48:44 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/25 12:47:18 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 {
 }*/
 
-static int	check_argument_and_write(const char *specifier, va_list ap)
+static int	check_argument_and_write(char specifier, va_list ap)
 {/*Check if specifier must be const char * or just char*/
 	if (specifier == 'c' || specifier == '%')/*% can have chars between %%*/
 		return (print_char(va_arg(ap, int)));
@@ -32,7 +32,7 @@ static int	check_argument_and_write(const char *specifier, va_list ap)
 		return (print_hexadecimal(va_arg(ap, unsigned int), specifier));
 	/*else
 		while (specifier != %)*/
-		
+	return (0);
 }
 
 static int	print_format(char const *format, va_list  parameter)
@@ -56,6 +56,7 @@ static int	print_format(char const *format, va_list  parameter)
 			i++;
 		}
 	}
+	return (result);
 }
 
 int	ft_printf(char const *format, ...)
