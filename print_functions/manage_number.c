@@ -12,12 +12,23 @@
 
 #include "../ft_printf.h"
 
+int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
+{
+	int	result;
+
+	result = 0;
+	if (n >= bs)
+		result += print_loop((n / bs), base_c, bs);
+	result += print_char(base_c[n % bs]);
+	return (result);
+}
+
 /*Function to write digit, for d, i and u*/
 /*11-10-24	use it for x, X and p too, adding base as a parameter*/
 int	putnbr_base(long long num, char *base_chars, unsigned int base)
 {
 	int	result;
-	unsigned int	unsign;
+	unsigned long long	unsign;
 
 	result = 0;
 	if (num < 0 && base == 10)
