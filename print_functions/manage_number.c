@@ -12,6 +12,7 @@
 
 #include "../ft_printf.h"
 
+/*			Recursion loop to print ALL number conversions	*/ 
 int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
 {
 	int	result;
@@ -23,46 +24,43 @@ int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
 	return (result);
 }
 
-/*Function to write digit, for d, i and u*/
-/*11-10-24	use it for x, X and p too, adding base as a parameter*/
-int	putnbr_base(long long num, char *base_chars, unsigned int base)
+/*		Like putnbr. Function to write digit, for d and i*/
+int	print_signed_decimal(int num)
 {
 	int	result;
 	unsigned long long	unsign;
 
 	result = 0;
-	if (num < 0 && base == 10)
+	if (num < 0)
 	{
 		result += print_char('-');
 		unsign = num * -1;
 	}
 	else
 		unsign = num;
-	if (unsign >= base)
-		result += putnbr_base((unsign / base), base_chars, base);
-	result += print_char(base_chars[unsign % base]);
+	result += print_loop(unsign, LOWER_HEXA_BASE, 10);
 	return (result);
 }
 
 int	print_pointer(void *p_argument)
 {
 	int	result;
-	long long	address;
+	unsigned long long	address;
 
 	if (p_argument == NULL)
 		return (print_string("(nil)"));
 	result = 0;
 	result += print_string("0x");
-	address = (long long)p_argument;
-	result += putnbr_base(address , LOWER_HEXA_BASE, 16);
+	address = (unsigned long long)p_argument;
+	result += print_loop(address, LOWER_HEXA_BASE, 16);
 	return (result);
 }
 
 int	print_hexadecimal(unsigned int hexa_argument, char specifier)
 {
 	if (specifier == 'x')
-		return (putnbr_base(hexa_argument, LOWER_HEXA_BASE, 16));
+		return (print_loop(hexa_argument, LOWER_HEXA_BASE, 16));
 	else if (specifier == 'X')
-		return (putnbr_base(hexa_argument, UPPER_HEXA_BASE, 16));
+		return (print_loop(hexa_argument, UPPER_HEXA_BASE, 16));
 	return (0);
 }
