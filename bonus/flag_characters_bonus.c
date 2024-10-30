@@ -26,15 +26,14 @@ int  print_flag_hash(unsigned int hexa_argument, char specifier)
   return (result);
 }
 
+/*Check flags + #*/
 int  check_flags(char flag, char specifier, va_list ap)
 {
   int  result;
 
   result = 0;
-  if ((flag == '+') && ((specifier == 'd') || (specifier == 'i')))
+  if (((flag == 43) || (flag == 32)) && ((specifier == 'd') || (specifier == 'i')))
     result += print_flags_signed_decimal(flag, va_arg(ap, int))
-  else if ((flag == 32) && ((specifier == 'd') || (specifier == 'i')))
-    result += print_flags_signed_decimal(flag, va_arg(ap, int));
   else if ((flag == '#') && ((specifier == 'x') || (specifier == 'X')))
     result += print_flag_hash(va_arg(ap, unsigned int), specifier);
   return (result);
