@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/29 20:13:48 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/31 17:45:10 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
 int	print_signed_decimal(int num)
 {
 	int	result;
-	unsigned long long	unsign;
+	unsigned int	unsign;
 
 	result = 0;
 	if (num < 0)
@@ -42,24 +42,17 @@ int	print_signed_decimal(int num)
 	return (result);
 }
 
-int	print_pointer(size_t p_argument)
+int	print_pointer(void *p_argument)
 {
 	int	result;
-<<<<<<< HEAD
-=======
 	unsigned long long	address;
->>>>>>> 7dad8bd6a325017b6250382928096de5a641e72c
 
 	if (p_argument == 0)
 		return (print_string("(nil)"));
 	result = 0;
 	result += print_string("0x");
-<<<<<<< HEAD
-	result += putnbr_base(p_argument, LOWER_HEXA_BASE, 16);
-=======
 	address = (unsigned long long)p_argument;
 	result += print_loop(address, LOWER_HEXA_BASE, 16);
->>>>>>> 7dad8bd6a325017b6250382928096de5a641e72c
 	return (result);
 }
 
