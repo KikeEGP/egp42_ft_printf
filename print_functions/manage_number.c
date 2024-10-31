@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/27 20:50:08 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/29 20:13:48 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,15 @@ int	putnbr_base(long long num, char *base_chars, unsigned int base)
 	return (result);
 }
 
-int	print_pointer(void *p_argument)
+int	print_pointer(size_t p_argument)
 {
 	int	result;
-	long long	address;
 
-	if (p_argument == NULL)
+	if (p_argument == 0)
 		return (print_string("(nil)"));
 	result = 0;
 	result += print_string("0x");
-	address = (long long)p_argument;
-	result += putnbr_base(address , LOWER_HEXA_BASE, 16);
+	result += putnbr_base(p_argument, LOWER_HEXA_BASE, 16);
 	return (result);
 }
 

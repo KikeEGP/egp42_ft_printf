@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/27 20:48:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/10/29 20:12:06 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	check_argument_and_write(char specifier, va_list ap)
 	else if (specifier == 's')
 		return (print_string(va_arg(ap, const char *)));
 	else if (specifier == 'p')
-		return (print_pointer(va_arg(ap, void *)));
+		return (print_pointer(va_arg(ap, size_t)));
 	else if (specifier == 'd' || specifier == 'i')
 		return (putnbr_base(va_arg(ap, int), LOWER_HEXA_BASE, 10));
 	else if (specifier == 'u')
