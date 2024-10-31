@@ -25,9 +25,11 @@ static int	check_argument_and_write(char specifier, va_list ap)
 	else if (specifier == 'p')
 		return (print_pointer(va_arg(ap, size_t)));
 	else if (specifier == 'd' || specifier == 'i')
-		return (putnbr_base(va_arg(ap, int), LOWER_HEXA_BASE, 10));
+		return (print_signed_decimal(va_arg(ap, int),
+			LOWER_HEXA_BASE, 10));
 	else if (specifier == 'u')
-		return (putnbr_base(va_arg(ap, unsigned int), LOWER_HEXA_BASE, 10));
+		return (print_loop(va_arg(ap, unsigned int),
+			LOWER_HEXA_BASE, 10));
 	else if (specifier == 'x' || specifier == 'X')
 		return (print_hexadecimal(va_arg(ap, unsigned int), specifier));
 	else if (specifier == '%')

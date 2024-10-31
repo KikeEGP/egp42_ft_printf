@@ -26,7 +26,14 @@ int	ft_printf(char const *format, ...);
 int	print_char(int c_argument);
 int	print_string(const char *s_argument);
 /*											manage_numbers					*/
+<<<<<<< HEAD
 int	print_hexadecimal(unsigned int hexa_argument, char specifier);
 int	print_pointer(size_t p_argument);
 int	putnbr_base(long long num, char *base_chars, unsigned int base);
+=======
+int print_signed_decimal(int num);
+int print_hexadecimal(unsigned int hexa_argument, char specifier);
+int	print_pointer(void *p_argument);
+int	print_loop(unsigned long long n, char *base_c, unsigned long long bs);
+>>>>>>> 7dad8bd6a325017b6250382928096de5a641e72c
 #endif
