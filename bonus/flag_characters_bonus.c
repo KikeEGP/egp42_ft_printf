@@ -1,4 +1,4 @@
-int  print_flags_signed_decimal(char flag, int decimal_argument)
+static int  print_flags_signed_decimal(char flag, int decimal_argument)
 {
   int  result;
 
@@ -13,7 +13,7 @@ int  print_flags_signed_decimal(char flag, int decimal_argument)
   return (result);
 }
 
-int  print_flag_hash(unsigned int hexa_argument, char specifier)
+static int  print_flag_hash(unsigned int hexa_argument, char specifier)
 {
   int  result;
 
