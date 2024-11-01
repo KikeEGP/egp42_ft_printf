@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/01 02:22:35 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/01 02:54:43 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,13 @@ static int	print_format(char const *format, va_list  parameter)
 	{
 		if (format[i] != '%')
 			result += print_char(format[i++]);
-		else if (format[i] == '%' 
-				&& check_flags(format[i + 1], format[i + 2], parameter) != 0)
-		{
-			result += check_flags(format[i + 1], format[i + 2], parameter);
-			result += check_argument_and_write(format[i], parameter);
-			i += 3;
-		}
 		else
 		{
 			i++;
-			result += check_argument_and_write(format[i++], parameter);
+			if ((format[i] == 43) || (format[i] == 32) || (format[i] == 35))
+				result += check_flags(format[i], format[i + 1], parameter);
+			else
+				result += check_argument_and_write(format[i++], parameter);
 		}
 	}
 	return (result);
