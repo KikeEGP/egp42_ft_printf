@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/01 01:13:34 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/01 01:34:32 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/01 02:33:27 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int  check_flags(char flag, char specifier, va_list ap)
   result = 0;
   if (((flag == 43) || (flag == 32)) 
 		  && ((specifier == 'd') || (specifier == 'i')))
-    result += print_flags_signed_decimal(flag, va_arg(ap, int))
+    result += print_flags_signed_decimal(flag, va_arg(ap, int));
   else if ((flag == '#') && ((specifier == 'x') || (specifier == 'X')))
     result += print_flag_hash(va_arg(ap, unsigned int), specifier);
   return (result);

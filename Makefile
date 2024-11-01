@@ -6,11 +6,13 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 18:13:30 by enrgil-p          #+#    #+#              #
-#    Updated: 2024/11/01 01:47:31 by enrgil-p         ###   ########.fr        #
+#    Updated: 2024/11/01 02:32:36 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
+
+BONUS = .bonus
 
 SRCS =	ft_printf.c\
 		print_functions/manage_chars.c\
@@ -18,12 +20,10 @@ SRCS =	ft_printf.c\
 
 OBJS = $(SRCS:.c=.o)
 
-BONUS = .bonus
-
-BONUS_SRCS =	ft_printf_bonus.c\
-				print_functions/flag_characters_bonus.c\
-				print_functions/manage_number_bonus.c\
-				print_functions/manage_chars_bonus.c
+BONUS_SRCS =	bonus/ft_printf_bonus.c\
+				bonus/print_functions/flag_characters_bonus.c\
+				bonus/print_functions/manage_number_bonus.c\
+				bonus/print_functions/manage_chars_bonus.c
 
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
  
@@ -39,12 +39,6 @@ $(NAME): $(OBJS)
 	$(info CREATED $(NAME))
 #	ar: creates *.a;  r: replace if previous exist; c: creates if doesn't exist
 
-bonus: $(BONUS)
-	$(BONUS): $(BONUS_OBJS)
-	touch $(BONUS)
-	ar rc $(BONUS) $(BONUS_OBJS)
-	$(info CREATED $(BONUS))
-
 clean:
 	$(RM) $(OBJS)
 
@@ -55,4 +49,10 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all bonus clean compclean fclean re
+bonus: $(BONUS)
+$(BONUS): $(OBJS) $(BONUS_OBJS)
+	touch .bonus
+	ar rc $(NAME) $(OBJS) $(BONUS_OBJS)
+	$(info CREATED $(NAME))
+
+.PHONY: all clean compclean fclean re
