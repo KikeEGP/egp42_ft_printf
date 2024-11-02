@@ -6,7 +6,7 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 18:13:30 by enrgil-p          #+#    #+#              #
-#    Updated: 2024/11/02 20:58:57 by enrgil-p         ###   ########.fr        #
+#    Updated: 2024/11/02 22:57:51 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ $(NAME): $(OBJS)
 #	ar: creates *.a;  r: replace if previous exist; c: creates if doesn't exist
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	$(RM) $(OBJS)
 
 compclean: all clean
 
