@@ -6,15 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/31 17:40:43 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/26 21:12:11 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-/*static int	check_loop_for_percent()
-{
-}*/
 
 static int	check_argument_and_write(char specifier, va_list ap)
 {/*Check if specifier must be const char * or just char*/
@@ -54,9 +50,12 @@ static int	print_format(char const *format, va_list  parameter)
 		else
 		{
 			i++;
-			result += check_argument_and_write(format[i], parameter);
-			i++;
+			if (format[i] != '\0')
+				result += check_argument_and_write(format[i++], parameter);
+			else
+				return (-1);
 		}
+		
 	}
 	return (result);
 }
