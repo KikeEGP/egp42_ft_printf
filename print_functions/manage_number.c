@@ -6,13 +6,13 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/31 17:45:10 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/26 21:33:10 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-/*			Recursion loop to print ALL number conversions	*/ 
+/*			Recursion loop to print ALL number conversions	*/
 int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
 {
 	int	result;
@@ -27,7 +27,7 @@ int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
 /*		Like putnbr. Function to write digit, for d and i*/
 int	print_signed_decimal(int num)
 {
-	int	result;
+	int				result;
 	unsigned int	unsign;
 
 	result = 0;
@@ -44,7 +44,7 @@ int	print_signed_decimal(int num)
 
 int	print_pointer(void *p_argument)
 {
-	int	result;
+	int					result;
 	unsigned long long	address;
 
 	if (p_argument == 0)
