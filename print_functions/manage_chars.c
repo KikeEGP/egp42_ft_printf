@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/10/23 14:18:50 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/26 21:34:12 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	print_char(int c_argument)
 {
-	int		result;
+	int				result;
 	unsigned char	letter;
 
 	letter = (unsigned char)c_argument;
