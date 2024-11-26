@@ -14,9 +14,6 @@
 
 static char	*check_specifier(char const	*expected, char specifier)
 {
-	int	result;
-
-	result = 0;
 	while (*expected)
 	{
 		if (*expected == (char)specifier)
@@ -57,17 +54,10 @@ static int	print_format(char const *format, va_list parameter)
 	{
 		if (format[i] != '%')
 			result += print_char(format[i++]);
+		else if (format[++i] != '\0' && check_specifier(SPECIFIERS, format[i]))
+			result += check_argument_and_write(format[i++], parameter);
 		else
-		{
-			if (format[++i] != '\0' && check_specifier(SPECIFIERS, format[i]))
-			{
-				result += check_argument_and_write(format[i++], parameter);
-				if (result == -1)
-					return (-1);
-			}
-			else
-				return (-1);
-		}
+			return (-1);
 	}
 	return (result);
 }
