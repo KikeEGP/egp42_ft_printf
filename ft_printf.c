@@ -6,11 +6,25 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 18:13:45 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/26 21:37:06 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/26 22:38:44 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+static char	*check_specifier(char const	*expected, char specifier)
+{
+	int	result;
+
+	result = 0;
+	while (*expected)
+	{
+		if (*expected == (char)specifier)
+			return ((char *)expected);
+		expected++;
+	}
+	return (NULL);
+}
 
 static int	check_argument_and_write(char specifier, va_list ap)
 {
@@ -42,15 +56,15 @@ static int	print_format(char const *format, va_list parameter)
 	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
-		{
-			result += print_char(format[i]);
-			i++;
-		}
+			result += print_char(format[i++]);
 		else
 		{
-			i++;
-			if (format[i] != '\0')
+			if (format[++i] != '\0' && check_specifier(SPECIFIERS, format[i]))
+			{
 				result += check_argument_and_write(format[i++], parameter);
+				if (result == -1)
+					return (-1);
+			}
 			else
 				return (-1);
 		}

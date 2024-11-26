@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/07 15:03:38 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/26 21:37:40 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/26 22:35:19 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 
 # define UPPER_HEXA_BASE "0123456789ABCDEF"
 # define LOWER_HEXA_BASE "0123456789abcdef"
+# define SPECIFIERS "cspdiuxX%"
 
 int	ft_printf(char const *format, ...);
 /*											manage_chars					*/
