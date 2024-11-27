@@ -6,7 +6,7 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/26 21:34:12 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:23:14 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	print_char(int c_argument)
 	result = 1;
 	write(1, &letter, result);
 	return (result);
-	/*Check if this is correct. When error, writes -1?*/
 }
 
 int	print_string(const char *s_argument)
