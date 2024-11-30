@@ -6,15 +6,15 @@
 #    By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/03 18:13:30 by enrgil-p          #+#    #+#              #
-#    Updated: 2024/11/02 22:57:51 by enrgil-p         ###   ########.fr        #
+#    Updated: 2024/11/27 20:29:05 by enrgil-p         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
 SRCS =	ft_printf.c\
-		print_functions/manage_chars.c\
-		print_functions/manage_number.c
+		manage_chars.c\
+		manage_number.c
 
 OBJS = $(SRCS:.c=.o)
 

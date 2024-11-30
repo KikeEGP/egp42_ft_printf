@@ -6,11 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:49 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/27 20:23:14 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:29:45 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 int	print_char(int c_argument)
 {

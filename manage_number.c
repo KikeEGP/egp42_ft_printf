@@ -6,11 +6,11 @@
 /*   By: enrgil-p <enrgil-p@student.42madrid>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/21 16:18:58 by enrgil-p          #+#    #+#             */
-/*   Updated: 2024/11/26 21:33:10 by enrgil-p         ###   ########.fr       */
+/*   Updated: 2024/11/27 20:30:17 by enrgil-p         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../ft_printf.h"
+#include "ft_printf.h"
 
 /*			Recursion loop to print ALL number conversions	*/
 int	print_loop(unsigned long long n, char *base_c, unsigned long long bs)
